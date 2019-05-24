@@ -21,6 +21,13 @@ class InstructorController {
         loadFromPersistentStore()
     }
     
+    func instructorSignIn(username: String, password: String, instructor: Bool) -> Bool {
+        if instructors.contains(Instructor(username: username, password: password, instructor: instructor)) {
+            return true
+        }
+        return false
+    }
+    
     func createInstructor(username: String, password: String, id: Int?, instructor: Bool){
         let instructor = Instructor(username: username, password: password, id: id, instructor: instructor)
         instructors.append(instructor)

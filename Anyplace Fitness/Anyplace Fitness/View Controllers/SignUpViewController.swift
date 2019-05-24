@@ -33,6 +33,8 @@ class SignUpViewController: UIViewController {
     @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {
     }
     
+    //need to add button to check segmented and textfields
+    
     /*
     // MARK: - Navigation
 
@@ -42,5 +44,24 @@ class SignUpViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    func updateViewsForSegmented(){
+        //if signedIn pressed change views
+        
+        //if signUp pressed, change views
+    }
+    
+    func signUp(){
+        
+    }
+    
+    func signIn(){
+        guard let username = usernameTF.text, !username.isEmpty, let email = emailTF.text, !email.isEmpty, let password = passwordTF.text, !password.isEmpty else  { return }
+        //check the username and password against both clients and instructors
+        if cc.clientSignIn(username: username, password: password){
+            //if this is true the client has signed in before
+        } else {
+            //client has not signed in before so create an alert message and tell them to sign up
+        }
+    }
 }

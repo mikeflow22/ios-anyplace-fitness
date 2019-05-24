@@ -24,6 +24,11 @@ class Instructor: Codable {
         self.instructor = instructor
         self.workouts = workouts
     }
-    
+}
+
+extension Instructor: Equatable {
+    static func == (lhs: Instructor, rhs: Instructor) -> Bool {
+        return lhs.username == rhs.username && lhs.password == rhs.password && lhs.instructor == rhs.instructor
+    }
     
 }

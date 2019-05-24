@@ -28,6 +28,13 @@ class ClientController {
         saveToPersistentStore()
     }
     
+    func clientSignIn(username: String, password: String) -> Bool {
+        if clients.contains(Client(username: username, password: password)) {
+            return true
+        }
+        return false
+    }
+    
     //add and remove punch passes, classes
     func updateWorkoutPassesAndUsesremaining(client: Client, newWorkouts: [Workout]?, newPasses: [PunchPass]?, newUsesremaining: Int?){
         client.workouts = newWorkouts
