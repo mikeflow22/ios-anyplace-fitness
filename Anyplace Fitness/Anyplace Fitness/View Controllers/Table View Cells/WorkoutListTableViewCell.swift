@@ -10,22 +10,10 @@ import UIKit
 
 class WorkoutListTableViewCell: UITableViewCell {
 
-//    var wc: WorkoutController?
-    var workout: Workout?
-    
-    var isClientSide: Bool? {
+//only need the workout because we already checked if it ws the client workout or instruxtor before we passed it in here.
+    var workout: Workout? {
         didSet {
-            print("WorkoutListTableViewCell isClientSide isSet!")
-        }
-    }
-    var client: Client? {
-        didSet {
-            print("WorkoutListTableViewCell client is set!")
-        }
-    }
-    var instructor: Instructor? {
-        didSet {
-            print("WorkoutListTableViewCell Instructor is set!")
+            updateViews()
         }
     }
     
@@ -34,6 +22,11 @@ class WorkoutListTableViewCell: UITableViewCell {
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var myImageView: UIImageView!
     
-    
+    func updateViews(){
+        guard let passedInWorkout = workout, let image = passedInWorkout.image else { return }
+        workoutNameLabel.text = passedInWorkout.name
+        dayLabel.text = passedInWorkout.schedule
+        myImageView.image = UIImage(named: image)
 
+    }
 }
