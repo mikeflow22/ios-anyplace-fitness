@@ -19,6 +19,7 @@
 		1BC141B622983DF800A30054 /* PunchPassCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141B522983DF800A30054 /* PunchPassCellTableViewCell.swift */; };
 		1BC141BA2298494400A30054 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141B92298494400A30054 /* Client.swift */; };
 		1BC141BC22984B1800A30054 /* Instructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141BB22984B1800A30054 /* Instructor.swift */; };
+		1BC141BE22984B9100A30054 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141BD22984B9100A30054 /* Workout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		1BC141B522983DF800A30054 /* PunchPassCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchPassCellTableViewCell.swift; sourceTree = "<group>"; };
 		1BC141B92298494400A30054 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		1BC141BB22984B1800A30054 /* Instructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructor.swift; sourceTree = "<group>"; };
+		1BC141BD22984B9100A30054 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +70,7 @@
 		1BC141932298242600A30054 /* Anyplace Fitness */ = {
 			isa = PBXGroup;
 			children = (
-				1BC141B82298492D00A30054 /* Trainer Model */,
+				1BC141B82298492D00A30054 /* Trainer Models */,
 				1BC141B72298491B00A30054 /* Client Model */,
 				1BC141942298242600A30054 /* AppDelegate.swift */,
 				1BC141AA229827E800A30054 /* StoryBoard */,
@@ -133,12 +135,13 @@
 			path = "Client Model";
 			sourceTree = "<group>";
 		};
-		1BC141B82298492D00A30054 /* Trainer Model */ = {
+		1BC141B82298492D00A30054 /* Trainer Models */ = {
 			isa = PBXGroup;
 			children = (
 				1BC141BB22984B1800A30054 /* Instructor.swift */,
+				1BC141BD22984B9100A30054 /* Workout.swift */,
 			);
-			path = "Trainer Model";
+			path = "Trainer Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +218,7 @@
 				1BC141A7229827A500A30054 /* SignUpViewController.swift in Sources */,
 				1BC141BC22984B1800A30054 /* Instructor.swift in Sources */,
 				1BC141952298242600A30054 /* AppDelegate.swift in Sources */,
+				1BC141BE22984B9100A30054 /* Workout.swift in Sources */,
 				1BC141B622983DF800A30054 /* PunchPassCellTableViewCell.swift in Sources */,
 				1BC141AC22982B4800A30054 /* WorkoutListTableViewController.swift in Sources */,
 				1BC141B422983DE200A30054 /* PunchPassTableViewController.swift in Sources */,
