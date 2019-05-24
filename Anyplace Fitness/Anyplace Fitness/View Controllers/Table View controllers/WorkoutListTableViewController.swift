@@ -11,6 +11,8 @@ import UIKit
 //DELETE CLASSES 
 class WorkoutListTableViewController: UITableViewController {
 
+    let wc = WorkoutController()
+    
     //MARK: - IBOutlets
     @IBOutlet weak var searchBarProperties: UISearchBar!
     

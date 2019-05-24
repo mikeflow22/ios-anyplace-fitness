@@ -103,8 +103,8 @@
 		1BC141A9229827DA00A30054 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1BC141B12298319C00A30054 /* DetailWorkoutViewController.swift */,
 				1BC141A6229827A500A30054 /* SignUpViewController.swift */,
+				1BC141B12298319C00A30054 /* DetailWorkoutViewController.swift */,
 				1BC141AF22982BCC00A30054 /* Table View controllers */,
 				1BC141B022982BD500A30054 /* Table View Cells */,
 			);

@@ -11,6 +11,9 @@ import UIKit
 //ON BOARD TRAINER -- fetch instructors
 class SignUpViewController: UIViewController {
 
+    //maybe these should go in the viewDidLoad?
+    let cc = ClientController()
+    let ic = InstructorController()
     
     //MARK: - IBOutlets
     @IBOutlet weak var usernameTF: UITextField!

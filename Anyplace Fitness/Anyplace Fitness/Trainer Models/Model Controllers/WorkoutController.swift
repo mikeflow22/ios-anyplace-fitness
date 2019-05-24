@@ -50,8 +50,8 @@ class WorkoutController {
     }
     
     //punchpass to workout
-    func include(punchPass: PunchPass, toWorkout workout: Workout){
-        workout.punchPass?.append(punchPass)
+    func include(punchPasses: [PunchPass], toWorkout workout: Workout){
+        workout.punchPass = punchPasses
         
         //SAVE TO PERSISTENT STORE
     }
