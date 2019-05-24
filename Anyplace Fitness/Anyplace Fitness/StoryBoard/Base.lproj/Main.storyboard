@@ -100,7 +100,7 @@
         <!--Title-->
         <scene sceneID="fmI-w0-TQC">
             <objects>
-                <tableViewController id="cr7-U4-zBp" sceneMemberID="viewController">
+                <tableViewController id="cr7-U4-zBp" customClass="WorkoutListTableViewController" customModule="Anyplace_Fitness" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cb6-6k-iHN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,7 +111,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutCell" id="LFZ-5f-PRk">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutCell" id="LFZ-5f-PRk" customClass="WorkoutListTableViewCell" customModule="Anyplace_Fitness" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LFZ-5f-PRk" id="lq4-xa-4G3">
@@ -154,6 +154,11 @@
                                         <constraint firstItem="uNk-IK-dhV" firstAttribute="trailing" secondItem="lq4-xa-4G3" secondAttribute="trailingMargin" id="el6-aV-kwY"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dayLabel" destination="TLU-ht-xsR" id="c2m-Ig-FUF"/>
+                                    <outlet property="myImageView" destination="uNk-IK-dhV" id="mI1-YF-fuW"/>
+                                    <outlet property="workoutNameLabel" destination="qBS-uv-trG" id="JTX-8P-0kl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -162,8 +167,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="zhU-r2-5e1">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Wa4-iw-4KP"/>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Wa4-iw-4KP">
+                            <connections>
+                                <action selector="goToSettingsScene:" destination="cr7-U4-zBp" id="Kww-pA-6iS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBarProperties" destination="suK-9P-GZn" id="HH6-Rf-DV8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFy-6q-oat" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

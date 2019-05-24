@@ -10,11 +10,19 @@ import UIKit
 
 class WorkoutListTableViewController: UITableViewController {
 
+    //MARK: - IBOutlets
+    @IBOutlet weak var searchBarProperties: UISearchBar!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
+    //MARK: - IBActions
+    @IBAction func goToSettingsScene(_ sender: UIBarButtonItem) {
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
