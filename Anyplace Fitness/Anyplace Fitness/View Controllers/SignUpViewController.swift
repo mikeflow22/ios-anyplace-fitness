@@ -10,7 +10,9 @@ import UIKit
 //ON BOARD NEW CLIENT -- fetch clients
 //ON BOARD TRAINER -- fetch instructors
 class SignUpViewController: UIViewController {
-
+    //THIS IS WHAT WE WILL PASS TO MAKE SURE THE CORRECT SIDE IS SHOWING
+    var isClientSide = false
+    
     //maybe these should go in the viewDidLoad?
     let cc = ClientController()
     let ic = InstructorController()
@@ -38,8 +40,30 @@ class SignUpViewController: UIViewController {
         if sender.selectedSegmentIndex == 0 && !switchProperties.isOn {
             //client signing back in
             if cc.clientSignIn(username: username, password: password){
-                //if this is true client has signed in before so you can segue t
+                //if this is true then segue and change side
+                isClientSide = true
+            } else {
+                //ALERT MESSAGE SAYING SIGN UP
             }
+        } else if sender.selectedSegmentIndex == 0 && switchProperties.isOn {
+            //instructor signing back in
+            if ic.instructorSignIn(username: username, password: password, instructor: switchProperties.isOn){
+                //if this is true then segue and update side
+                isClientSide = false
+            } else {
+                //ALERT MESSAGE SAYING SIGN UP
+            }
+            
+        } else if sender.selectedSegmentIndex == 1 && !switchProperties.isOn {
+            //client is signing UP
+            cc.createClient(username: username, password: password)
+            //segue and change side
+            isClientSide = true
+        } else if sender.selectedSegmentIndex == 1 && switchProperties.isOn {
+            //instructor signing up
+            ic.createInstructor(username: username, password: password, id: nil, instructor: switchProperties.isOn)
+            //segue and update side
+            isClientSide = false
         }
     }
     
@@ -54,24 +78,5 @@ class SignUpViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    func updateViewsForSegmented(){
-        //if signedIn pressed change views
-        
-        //if signUp pressed, change views
-    }
-    
-    func signUp(){
-        
-    }
-    
-    func signIn(){
-        guard let username = usernameTF.text, !username.isEmpty, let email = emailTF.text, !email.isEmpty, let password = passwordTF.text, !password.isEmpty else  { return }
-        //check the username and password against both clients and instructors
-        if cc.clientSignIn(username: username, password: password) || ic.instructorSignIn(username: username, password: password, instructor: switchProperties.isOn){
-            //if this is true the client has signed in before
-        } else {
-            //client has not signed in before so create an alert message and tell them to sign up
-        }
-    }
+
 }
