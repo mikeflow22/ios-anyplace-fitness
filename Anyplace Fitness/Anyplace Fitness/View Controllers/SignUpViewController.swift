@@ -35,6 +35,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {
+        print("button value changed")
         guard let username = usernameTF.text, !username.isEmpty, let email = emailTF.text, !email.isEmpty, let password = passwordTF.text, !password.isEmpty else  { return }
         
         let client = cc.createClient(username: username, password: password)
