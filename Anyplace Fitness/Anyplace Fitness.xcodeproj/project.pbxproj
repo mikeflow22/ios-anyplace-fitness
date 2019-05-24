@@ -14,6 +14,7 @@
 		1BC141A7229827A500A30054 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141A6229827A500A30054 /* SignUpViewController.swift */; };
 		1BC141AC22982B4800A30054 /* WorkoutListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141AB22982B4800A30054 /* WorkoutListTableViewController.swift */; };
 		1BC141AE22982B9C00A30054 /* WorkoutListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141AD22982B9C00A30054 /* WorkoutListTableViewCell.swift */; };
+		1BC141B22298319C00A30054 /* DetailWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141B12298319C00A30054 /* DetailWorkoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1BC141A6229827A500A30054 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1BC141AB22982B4800A30054 /* WorkoutListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListTableViewController.swift; sourceTree = "<group>"; };
 		1BC141AD22982B9C00A30054 /* WorkoutListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListTableViewCell.swift; sourceTree = "<group>"; };
+		1BC141B12298319C00A30054 /* DetailWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorkoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		1BC141A9229827DA00A30054 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1BC141B12298319C00A30054 /* DetailWorkoutViewController.swift */,
 				1BC141A6229827A500A30054 /* SignUpViewController.swift */,
 				1BC141AF22982BCC00A30054 /* Table View controllers */,
 				1BC141B022982BD500A30054 /* Table View Cells */,
@@ -185,6 +188,7 @@
 				1BC141952298242600A30054 /* AppDelegate.swift in Sources */,
 				1BC141AC22982B4800A30054 /* WorkoutListTableViewController.swift in Sources */,
 				1BC141AE22982B9C00A30054 /* WorkoutListTableViewCell.swift in Sources */,
+				1BC141B22298319C00A30054 /* DetailWorkoutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

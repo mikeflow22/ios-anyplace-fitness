@@ -106,13 +106,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for workouts" id="suK-9P-GZn">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutCell" id="LFZ-5f-PRk" customClass="WorkoutListTableViewCell" customModule="Anyplace_Fitness" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="84" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LFZ-5f-PRk" id="lq4-xa-4G3">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
@@ -158,6 +162,7 @@
                                     <outlet property="dayLabel" destination="TLU-ht-xsR" id="c2m-Ig-FUF"/>
                                     <outlet property="myImageView" destination="uNk-IK-dhV" id="mI1-YF-fuW"/>
                                     <outlet property="workoutNameLabel" destination="qBS-uv-trG" id="JTX-8P-0kl"/>
+                                    <segue destination="PwZ-g8-S4y" kind="show" id="7Bn-kb-e4T"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -179,7 +184,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFy-6q-oat" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2356.521739130435" y="124.55357142857142"/>
+            <point key="canvasLocation" x="2314" y="124"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="2Ti-h5-WK6">
+            <objects>
+                <viewController id="PwZ-g8-S4y" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hRr-0z-f9n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="BbR-KV-Ct3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="Hz6-Q0-BnG">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="saJ-yh-rn8"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IvC-yD-rTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3053" y="124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sBE-kj-Mvm">

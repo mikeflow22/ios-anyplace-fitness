@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+//ON BOARD NEW CLIENT
+//ON BOARD TRAINER
 class SignUpViewController: UIViewController {
 
     
