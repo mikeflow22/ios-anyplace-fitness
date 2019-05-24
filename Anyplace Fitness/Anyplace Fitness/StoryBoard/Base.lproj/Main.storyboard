@@ -162,7 +162,7 @@
                                     <outlet property="dayLabel" destination="TLU-ht-xsR" id="c2m-Ig-FUF"/>
                                     <outlet property="myImageView" destination="uNk-IK-dhV" id="mI1-YF-fuW"/>
                                     <outlet property="workoutNameLabel" destination="qBS-uv-trG" id="JTX-8P-0kl"/>
-                                    <segue destination="PwZ-g8-S4y" kind="show" id="7Bn-kb-e4T"/>
+                                    <segue destination="PwZ-g8-S4y" kind="show" identifier="CellSegue" id="7Bn-kb-e4T"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -131,8 +131,8 @@
 		1BC141B022982BD500A30054 /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
-				1BC141B522983DF800A30054 /* PunchPassCellTableViewCell.swift */,
 				1BC141AD22982B9C00A30054 /* WorkoutListTableViewCell.swift */,
+				1BC141B522983DF800A30054 /* PunchPassCellTableViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";

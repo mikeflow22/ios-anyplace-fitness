@@ -17,6 +17,27 @@ import UIKit
  */
 
 class DetailWorkoutViewController: UIViewController {
+    
+    var wc: WorkoutController?
+    var workout: Workout?
+    
+    var isClientSide: Bool? {
+        didSet {
+            print("WorkoutListTableViewCell isClientSide isSet!")
+        }
+    }
+    var client: Client? {
+        didSet {
+            print("WorkoutListTableViewCell client is set!")
+        }
+    }
+    var instructor: Instructor? {
+        didSet {
+            print("WorkoutListTableViewCell Instructor is set!")
+        }
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
