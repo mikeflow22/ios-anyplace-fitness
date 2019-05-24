@@ -80,10 +80,10 @@
 		1BC141932298242600A30054 /* Anyplace Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				1BC141AA229827E800A30054 /* StoryBoard */,
 				1BC141B82298492D00A30054 /* Trainer Models */,
 				1BC141B72298491B00A30054 /* Client Model */,
 				1BC141942298242600A30054 /* AppDelegate.swift */,
-				1BC141AA229827E800A30054 /* StoryBoard */,
 				1BC141A9229827DA00A30054 /* View Controllers */,
 				1BC141A8229827B000A30054 /* Resources */,
 			);
@@ -122,8 +122,8 @@
 		1BC141AF22982BCC00A30054 /* Table View controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1BC141B322983DE200A30054 /* PunchPassTableViewController.swift */,
 				1BC141AB22982B4800A30054 /* WorkoutListTableViewController.swift */,
+				1BC141B322983DE200A30054 /* PunchPassTableViewController.swift */,
 			);
 			path = "Table View controllers";
 			sourceTree = "<group>";

@@ -90,7 +90,7 @@
                         <outlet property="segmentedProperties" destination="oit-D6-guz" id="id3-a6-2ZS"/>
                         <outlet property="switchProperties" destination="Ppp-9z-Vl6" id="J2x-CW-15d"/>
                         <outlet property="usernameTF" destination="8D5-e1-v7z" id="87j-nh-B3w"/>
-                        <segue destination="cr7-U4-zBp" kind="show" id="X08-5a-gRu"/>
+                        <segue destination="cr7-U4-zBp" kind="show" identifier="SignUpSegue" id="X08-5a-gRu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRH-TY-F8b" userLabel="First Responder" sceneMemberID="firstResponder"/>

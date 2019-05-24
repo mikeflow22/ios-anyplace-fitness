@@ -21,15 +21,15 @@ class ClientController {
         loadFromPersistentStore()
     }
     
-    func createClient(username: String, password: String){
+    func createClient(username: String, password: String) -> Client{
         let newClient = Client(username: username, password: password)
         clients.append(newClient)
-        
         saveToPersistentStore()
+        return newClient
     }
     
-    func clientSignIn(username: String, password: String) -> Bool {
-        if clients.contains(Client(username: username, password: password)) {
+    func clientSignIn(client: Client) -> Bool {
+        if clients.contains(client) {
             return true
         }
         return false

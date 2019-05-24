@@ -12,6 +12,14 @@ import UIKit
 class WorkoutListTableViewController: UITableViewController {
 
     let wc = WorkoutController()
+    var isClientSide: Bool? {
+        didSet {
+            print("WorkoutListTableViewController isClientSide isSet!")
+        }
+    }
+    var client: Client?
+    var instructor: Instructor?
+    
     
     //MARK: - IBOutlets
     @IBOutlet weak var searchBarProperties: UISearchBar!
