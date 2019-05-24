@@ -18,6 +18,7 @@
 		1BC141B422983DE200A30054 /* PunchPassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141B322983DE200A30054 /* PunchPassTableViewController.swift */; };
 		1BC141B622983DF800A30054 /* PunchPassCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141B522983DF800A30054 /* PunchPassCellTableViewCell.swift */; };
 		1BC141BA2298494400A30054 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141B92298494400A30054 /* Client.swift */; };
+		1BC141BC22984B1800A30054 /* Instructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141BB22984B1800A30054 /* Instructor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		1BC141B322983DE200A30054 /* PunchPassTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchPassTableViewController.swift; sourceTree = "<group>"; };
 		1BC141B522983DF800A30054 /* PunchPassCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchPassCellTableViewCell.swift; sourceTree = "<group>"; };
 		1BC141B92298494400A30054 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		1BC141BB22984B1800A30054 /* Instructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		1BC141B82298492D00A30054 /* Trainer Model */ = {
 			isa = PBXGroup;
 			children = (
+				1BC141BB22984B1800A30054 /* Instructor.swift */,
 			);
 			path = "Trainer Model";
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BC141A7229827A500A30054 /* SignUpViewController.swift in Sources */,
+				1BC141BC22984B1800A30054 /* Instructor.swift in Sources */,
 				1BC141952298242600A30054 /* AppDelegate.swift in Sources */,
 				1BC141B622983DF800A30054 /* PunchPassCellTableViewCell.swift in Sources */,
 				1BC141AC22982B4800A30054 /* WorkoutListTableViewController.swift in Sources */,
