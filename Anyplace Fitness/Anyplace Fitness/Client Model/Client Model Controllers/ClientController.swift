@@ -17,13 +17,15 @@ class ClientController {
         //SAVETOPERSISTSTORE
     }
     
-    func update(client: Client, newUsername: String, newPassword: String, newWorkouts: [Workout]?, newPasses: [PunchPass]?, newUsesremaining: Int?){
-        client.username = newUsername
-        client.password = newPassword
+    func updateWorkoutPassesAndUsesremaining(client: Client, newWorkouts: [Workout]?, newPasses: [PunchPass]?, newUsesremaining: Int?){
         client.workouts = newWorkouts
         client.passes = newPasses
         client.usesRemaining = newUsesremaining
     }
     
+    func updateSettings(of client: Client, newUsername: String, newPassword: String){
+        client.username = newUsername
+        client.password = newPassword
+    }
 
 }

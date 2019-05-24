@@ -34,4 +34,23 @@ class WorkoutController {
         //SAVE TO PERSISTENT STORE
     }
     
+    
+    //add client to workout
+    func add(client: Client, toWorkout: Workout){
+        toWorkout.clients?.append(client)
+        
+        //SAVE TO PERSISTENT STORE
+    }
+    
+    
+    //delete client from workout
+    func remove(client: Client, fromWorkout workout: Workout){
+        guard let clientToRemove = workout.clients?.firstIndex(of: client) else { return }
+        workout.clients?.remove(at: clientToRemove)
+        
+        //SAVE TO PERSISTENT STORE
+    }
+    
+    //punchpass to workout
+
 }

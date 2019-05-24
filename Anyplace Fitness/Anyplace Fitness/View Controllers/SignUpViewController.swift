@@ -7,8 +7,8 @@
 //
 
 import UIKit
-//ON BOARD NEW CLIENT
-//ON BOARD TRAINER
+//ON BOARD NEW CLIENT -- fetch clients
+//ON BOARD TRAINER -- fetch instructors
 class SignUpViewController: UIViewController {
 
     
