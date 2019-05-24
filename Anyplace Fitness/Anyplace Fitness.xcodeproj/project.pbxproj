@@ -12,6 +12,8 @@
 		1BC1419C2298242700A30054 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1419B2298242700A30054 /* Assets.xcassets */; };
 		1BC1419F2298242700A30054 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1419D2298242700A30054 /* LaunchScreen.storyboard */; };
 		1BC141A7229827A500A30054 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141A6229827A500A30054 /* SignUpViewController.swift */; };
+		1BC141AC22982B4800A30054 /* WorkoutListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141AB22982B4800A30054 /* WorkoutListTableViewController.swift */; };
+		1BC141AE22982B9C00A30054 /* WorkoutListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141AD22982B9C00A30054 /* WorkoutListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		1BC1419E2298242700A30054 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BC141A02298242700A30054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BC141A6229827A500A30054 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		1BC141AB22982B4800A30054 /* WorkoutListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListTableViewController.swift; sourceTree = "<group>"; };
+		1BC141AD22982B9C00A30054 /* WorkoutListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				1BC141A6229827A500A30054 /* SignUpViewController.swift */,
+				1BC141AB22982B4800A30054 /* WorkoutListTableViewController.swift */,
+				1BC141AD22982B9C00A30054 /* WorkoutListTableViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -161,6 +167,8 @@
 			files = (
 				1BC141A7229827A500A30054 /* SignUpViewController.swift in Sources */,
 				1BC141952298242600A30054 /* AppDelegate.swift in Sources */,
+				1BC141AC22982B4800A30054 /* WorkoutListTableViewController.swift in Sources */,
+				1BC141AE22982B9C00A30054 /* WorkoutListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
