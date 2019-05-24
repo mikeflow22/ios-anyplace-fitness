@@ -58,9 +58,9 @@
 		1BC141932298242600A30054 /* Anyplace Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				1BC141942298242600A30054 /* AppDelegate.swift */,
 				1BC141AA229827E800A30054 /* StoryBoard */,
 				1BC141A9229827DA00A30054 /* View Controllers */,
-				1BC141942298242600A30054 /* AppDelegate.swift */,
 				1BC141A8229827B000A30054 /* Resources */,
 			);
 			path = "Anyplace Fitness";
@@ -80,8 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				1BC141A6229827A500A30054 /* SignUpViewController.swift */,
-				1BC141AB22982B4800A30054 /* WorkoutListTableViewController.swift */,
-				1BC141AD22982B9C00A30054 /* WorkoutListTableViewCell.swift */,
+				1BC141AF22982BCC00A30054 /* Table View controllers */,
+				1BC141B022982BD500A30054 /* Table View Cells */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -92,6 +92,22 @@
 				1BC141982298242600A30054 /* Main.storyboard */,
 			);
 			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		1BC141AF22982BCC00A30054 /* Table View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1BC141AB22982B4800A30054 /* WorkoutListTableViewController.swift */,
+			);
+			path = "Table View controllers";
+			sourceTree = "<group>";
+		};
+		1BC141B022982BD500A30054 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1BC141AD22982B9C00A30054 /* WorkoutListTableViewCell.swift */,
+			);
+			path = "Table View Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
