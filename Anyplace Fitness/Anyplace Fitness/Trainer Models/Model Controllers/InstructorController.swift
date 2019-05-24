@@ -10,8 +10,56 @@ import Foundation
 class InstructorController {
     var instructors: [Instructor] = []
     
+    var persistenceURL: URL? {
+        let fileManger = FileManager.default
+        guard let documentDirectory = fileManger.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        let fileName = documentDirectory.appendingPathComponent("instructors.plist")
+        return fileName
+    }
+    
+    init() {
+        loadFromPersistentStore()
+    }
+    
     func createInstructor(username: String, password: String, id: Int?, instructor: Bool){
         let instructor = Instructor(username: username, password: password, id: id, instructor: instructor)
         instructors.append(instructor)
+        saveToPersistentStore()
+    }
+    
+    func update(instructor: Instructor, workouts: [Workout]?){
+        instructor.workouts = workouts
+        saveToPersistentStore()
+    }
+    
+    func saveToPersistentStore(){
+        guard let url = persistenceURL else {
+            print("Error unwrapping url savingToPersistentStore for instructors")
+            return }
+        
+        let propertyListEncoder = PropertyListEncoder()
+        do {
+            let data = try propertyListEncoder.encode(instructors)
+            try data.write(to: url)
+        } catch  {
+            print("Error encoding instructors to persistent store: \(error.localizedDescription)")
+            return
+        }
+    }
+    
+    func loadFromPersistentStore(){
+        //we have to check to see if url path is there by checking the filemanager's file Exists method
+        let fm = FileManager.default
+        guard let url = persistenceURL, fm.fileExists(atPath: url.path) else { return }
+        
+        let propertyListDecoder = PropertyListDecoder()
+        do {
+            let data = try Data(contentsOf: url)
+            let instructors = try propertyListDecoder.decode([Instructor].self, from: data)
+            self.instructors = instructors
+        } catch  {
+            print("Error decoding instructors data in the loadFromPersitenceStore do-catch: \(error.localizedDescription)")
+            return
+        }
     }
 }

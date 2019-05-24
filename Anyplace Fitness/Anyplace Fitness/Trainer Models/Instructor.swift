@@ -8,12 +8,22 @@
 
 import Foundation
 
-struct Instructor: Codable {
+class Instructor: Codable {
     //does everything below here have to be on the api documentation for parsing purposes?
     
-    let username: String
-    let password: String
-    let id: Int?
+    var username: String
+    var password: String
+    var id: Int?
     let instructor: Bool
-    let workouts: [Workout]? = nil
+    var workouts: [Workout]?
+    
+    init(username: String, password: String, id: Int? = nil, instructor: Bool, workouts: [Workout]? = nil) {
+        self.username = username
+        self.password = password
+        self.id = id
+        self.instructor = instructor
+        self.workouts = workouts
+    }
+    
+    
 }
