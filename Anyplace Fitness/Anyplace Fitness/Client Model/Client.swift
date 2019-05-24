@@ -9,8 +9,8 @@
 import Foundation
 
 class Client: Codable {
-    let username: String
-    let password: String
+    var username: String
+    var password: String
     
     //optional properties
     let instructor: Bool?

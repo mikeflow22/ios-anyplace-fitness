@@ -24,7 +24,7 @@ class WorkoutController {
         //SAVE TO PERSISTENT STORE
     }
     
-    func update(workout: Workout, newName: String, newSchedule: String, newLocation: String, newClient: [Client], newPunchPass: PunchPass, newImage: String){
+    func update(workout: Workout, newName: String, newSchedule: String, newLocation: String, newClient: [Client]?, newPunchPass: [PunchPass]?, newImage: String?){
         workout.name = newName
         workout.schedule = newSchedule
         workout.location = newSchedule
