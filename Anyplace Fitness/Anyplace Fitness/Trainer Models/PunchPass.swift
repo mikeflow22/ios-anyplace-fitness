@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PunchPass {
+struct PunchPass: Codable {
     var day: Int
     var price: Double
     var isSet: Bool

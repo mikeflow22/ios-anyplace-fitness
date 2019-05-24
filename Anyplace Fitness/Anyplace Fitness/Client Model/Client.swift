@@ -13,7 +13,7 @@ class Client: Codable {
     let password: String
     
     //optional properties
-    let instructor: Bool = false
+    let instructor: Bool?
     var workouts: [Workout]?
     var passes: [PunchPass]?
     var id: Int?
@@ -42,6 +42,6 @@ class Client: Codable {
 
 extension Client: Equatable {
     static func == (lhs: Client, rhs: Client) -> Bool {
-        return lhs.username = rhs.username && lhs.password == rhs.password && lhs.workouts == rhs.workouts && lhs.instructor == rhs.instructor
+        return lhs.username == rhs.username && lhs.password == rhs.password && lhs.workouts == rhs.workouts && lhs.instructor == rhs.instructor
     }
 }
