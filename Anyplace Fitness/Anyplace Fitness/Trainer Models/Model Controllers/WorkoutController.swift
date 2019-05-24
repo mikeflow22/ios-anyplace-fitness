@@ -34,14 +34,12 @@ class WorkoutController {
         //SAVE TO PERSISTENT STORE
     }
     
-    
     //add client to workout
     func add(client: Client, toWorkout: Workout){
         toWorkout.clients?.append(client)
         
         //SAVE TO PERSISTENT STORE
     }
-    
     
     //delete client from workout
     func remove(client: Client, fromWorkout workout: Workout){
@@ -52,5 +50,10 @@ class WorkoutController {
     }
     
     //punchpass to workout
+    func include(punchPass: PunchPass, toWorkout workout: Workout){
+        workout.punchPass?.append(punchPass)
+        
+        //SAVE TO PERSISTENT STORE
+    }
 
 }

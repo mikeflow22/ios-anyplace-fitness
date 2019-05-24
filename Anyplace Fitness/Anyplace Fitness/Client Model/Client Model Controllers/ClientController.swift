@@ -17,6 +17,7 @@ class ClientController {
         //SAVETOPERSISTSTORE
     }
     
+    //add and remove punch passes, classes
     func updateWorkoutPassesAndUsesremaining(client: Client, newWorkouts: [Workout]?, newPasses: [PunchPass]?, newUsesremaining: Int?){
         client.workouts = newWorkouts
         client.passes = newPasses
