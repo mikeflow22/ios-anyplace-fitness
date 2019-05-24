@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1BC141952298242600A30054 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141942298242600A30054 /* AppDelegate.swift */; };
-		1BC141972298242600A30054 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141962298242600A30054 /* ViewController.swift */; };
 		1BC1419A2298242600A30054 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BC141982298242600A30054 /* Main.storyboard */; };
 		1BC1419C2298242700A30054 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1419B2298242700A30054 /* Assets.xcassets */; };
 		1BC1419F2298242700A30054 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1419D2298242700A30054 /* LaunchScreen.storyboard */; };
+		1BC141A7229827A500A30054 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141A6229827A500A30054 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1BC141912298242600A30054 /* Anyplace Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Anyplace Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BC141942298242600A30054 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1BC141962298242600A30054 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1BC141992298242600A30054 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1BC1419B2298242700A30054 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BC1419E2298242700A30054 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BC141A02298242700A30054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BC141A6229827A500A30054 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,22 @@
 		1BC141932298242600A30054 /* Anyplace Fitness */ = {
 			isa = PBXGroup;
 			children = (
-				1BC141942298242600A30054 /* AppDelegate.swift */,
-				1BC141962298242600A30054 /* ViewController.swift */,
 				1BC141982298242600A30054 /* Main.storyboard */,
+				1BC141A6229827A500A30054 /* SignUpViewController.swift */,
+				1BC141942298242600A30054 /* AppDelegate.swift */,
+				1BC141A8229827B000A30054 /* Resources */,
+			);
+			path = "Anyplace Fitness";
+			sourceTree = "<group>";
+		};
+		1BC141A8229827B000A30054 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				1BC1419B2298242700A30054 /* Assets.xcassets */,
 				1BC1419D2298242700A30054 /* LaunchScreen.storyboard */,
 				1BC141A02298242700A30054 /* Info.plist */,
 			);
-			path = "Anyplace Fitness";
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BC141972298242600A30054 /* ViewController.swift in Sources */,
+				1BC141A7229827A500A30054 /* SignUpViewController.swift in Sources */,
 				1BC141952298242600A30054 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +292,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4W7EQ4E4R;
-				INFOPLIST_FILE = "Anyplace Fitness/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Anyplace Fitness/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +310,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4W7EQ4E4R;
-				INFOPLIST_FILE = "Anyplace Fitness/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Anyplace Fitness/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
