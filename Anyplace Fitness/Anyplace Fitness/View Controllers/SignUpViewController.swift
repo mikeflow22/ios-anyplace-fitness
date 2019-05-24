@@ -31,6 +31,16 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {
+        guard let username = usernameTF.text, !username.isEmpty, let email = emailTF.text, !email.isEmpty, let password = passwordTF.text, !password.isEmpty else  { return }
+        
+        //if sign up create either a client or instructor based on the switch value.
+        
+        if sender.selectedSegmentIndex == 0 && !switchProperties.isOn {
+            //client signing back in
+            if cc.clientSignIn(username: username, password: password){
+                //if this is true client has signed in before so you can segue t
+            }
+        }
     }
     
     //need to add button to check segmented and textfields
@@ -58,7 +68,7 @@ class SignUpViewController: UIViewController {
     func signIn(){
         guard let username = usernameTF.text, !username.isEmpty, let email = emailTF.text, !email.isEmpty, let password = passwordTF.text, !password.isEmpty else  { return }
         //check the username and password against both clients and instructors
-        if cc.clientSignIn(username: username, password: password){
+        if cc.clientSignIn(username: username, password: password) || ic.instructorSignIn(username: username, password: password, instructor: switchProperties.isOn){
             //if this is true the client has signed in before
         } else {
             //client has not signed in before so create an alert message and tell them to sign up
