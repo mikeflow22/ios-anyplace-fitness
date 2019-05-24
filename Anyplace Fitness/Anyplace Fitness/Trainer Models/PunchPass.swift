@@ -23,6 +23,5 @@ extension PunchPass: Equatable {
     static func == (lhs: PunchPass, rhs: PunchPass) -> Bool {
         return lhs.day == rhs.day && lhs.price == rhs.price && lhs.isSet == rhs.isSet
     }
-    
-    
+
 }

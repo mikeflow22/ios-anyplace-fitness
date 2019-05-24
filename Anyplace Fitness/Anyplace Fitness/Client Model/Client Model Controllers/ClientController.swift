@@ -8,7 +8,11 @@
 
 import Foundation
 class ClientController {
-    var clients = [Client]()
+    var clients = [Client]() {
+        didSet {
+            print("client array hit.")
+        }
+    }
     
     var persistenceURL: URL? {
         let fileManger = FileManager.default
@@ -25,6 +29,7 @@ class ClientController {
         let newClient = Client(username: username, password: password)
         clients.append(newClient)
         saveToPersistentStore()
+        print("this is the CLIENTS array: \(clients.map {$0.username})")
         return newClient
     }
     

@@ -16,8 +16,16 @@ class SignUpViewController: UIViewController {
     //maybe these should go in the viewDidLoad?
     let cc = ClientController()
     let ic = InstructorController()
-    var client: Client?
-    var instructor: Instructor?
+    var client: Client? {
+        didSet {
+            print("client set on sign in page")
+        }
+    }
+    var instructor: Instructor? {
+        didSet {
+            print("instructor set on sign in page")
+        }
+    }
     
     //MARK: - IBOutlets
     @IBOutlet weak var usernameTF: UITextField!
@@ -30,6 +38,15 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if segmentedProperties.selectedSegmentIndex == 0 {
+            segmentedProperties.selectedSegmentIndex = 1
+        } else {
+            segmentedProperties.selectedSegmentIndex = 0
+        }
+    }
+    
     //MARK: - IBActions
     @IBAction func switchValuechanged(_ sender: UISwitch) { //DONT NEED THIS GET RIDE OF IT
     }
@@ -38,43 +55,47 @@ class SignUpViewController: UIViewController {
         print("button value changed")
         guard let username = usernameTF.text, !username.isEmpty, let email = emailTF.text, !email.isEmpty, let password = passwordTF.text, !password.isEmpty else  { return }
         
-        let client = cc.createClient(username: username, password: password)
-        let instructor = ic.createInstructor(username: username, password: password, id: nil, instructor: switchProperties.isOn)
+//        let client = cc.createClient(username: username, password: password)
+//        let instructor = ic.createInstructor(username: username, password: password, id: nil, instructor: switchProperties.isOn)
         
         //if sign up create either a client or instructor based on the switch value.
-        
-        if sender.selectedSegmentIndex == 0 && !switchProperties.isOn {
+        if sender.selectedSegmentIndex == 1 && !switchProperties.isOn {
+            //client is signing UP
+            self.client = cc.createClient(username: username, password: password)
+            //segue and change side
+            isClientSide = true
+            
+            performSegue(withIdentifier: "SignUpSegue", sender: self)
+            
+        } else if sender.selectedSegmentIndex == 1 && switchProperties.isOn {
+            //instructor signing up
+            self.instructor = ic.createInstructor(username: username, password: password, id: nil, instructor: switchProperties.isOn)
+            //segue and update side
+            isClientSide = false
+            performSegue(withIdentifier: "SignUpSegue", sender: self)
+            
+        } else if sender.selectedSegmentIndex == 0 && !switchProperties.isOn {
             //client signing back in
-            if cc.clientSignIn(client: client){
+            guard let signInClient = client else { return }
+            if cc.clientSignIn(client: signInClient){
                 //if this is true then segue and change side
                 isClientSide = true
-                self.client = client
-            } else {
+                performSegue(withIdentifier: "SignUpSegue", sender: self)
+            } else  {
                 //ALERT MESSAGE SAYING SIGN UP
                 alert(message: "You are not in our database, please sign UP.")
             }
         } else if sender.selectedSegmentIndex == 0 && switchProperties.isOn {
             //instructor signing back in
-            if ic.instructorSignIn(instructor: instructor){
+            guard let signInInstructor = instructor else { return }
+            if ic.instructorSignIn(instructor: signInInstructor){
                 //if this is true then segue and update side
                 isClientSide = false
-                self.instructor = instructor
+                performSegue(withIdentifier: "SignUpSegue", sender: self)
             } else {
                 //ALERT MESSAGE SAYING SIGN UP
                 alert(message: "You are not in our database, please sign UP.")
             }
-        } else if sender.selectedSegmentIndex == 1 && !switchProperties.isOn {
-            //client is signing UP
-            let client = cc.createClient(username: username, password: password)
-            //segue and change side
-            isClientSide = true
-            self.client = client
-        } else if sender.selectedSegmentIndex == 1 && switchProperties.isOn {
-            //instructor signing up
-            let instructor = ic.createInstructor(username: username, password: password, id: nil, instructor: switchProperties.isOn)
-            //segue and update side
-            isClientSide = false
-            self.instructor = instructor
         }
     }
     

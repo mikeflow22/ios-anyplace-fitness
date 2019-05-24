@@ -109,9 +109,9 @@ class WorkoutListTableViewController: UITableViewController {
                 workoutToPass = workout
             }
             destinationVC.workout = workoutToPass
-            destinationVC.isClientSide = isClientSide
-            destinationVC.client = client
-            destinationVC.instructor = instructor
+//            destinationVC.isClientSide = isClientSide
+//            destinationVC.client = client
+//            destinationVC.instructor = instructor
             destinationVC.wc = wc
         }
         

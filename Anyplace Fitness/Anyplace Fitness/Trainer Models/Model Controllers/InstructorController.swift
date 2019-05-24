@@ -8,7 +8,11 @@
 
 import Foundation
 class InstructorController {
-    var instructors: [Instructor] = []
+    var instructors: [Instructor] = [] {
+        didSet {
+            print("instructor array hit")
+        }
+    }
     
     var persistenceURL: URL? {
         let fileManger = FileManager.default
@@ -32,6 +36,7 @@ class InstructorController {
         let instructor = Instructor(username: username, password: password, id: id, instructor: instructor)
         instructors.append(instructor)
         saveToPersistentStore()
+        print("this is the instructors array: \(instructors.map {$0.username})")
         return instructor
     }
     
