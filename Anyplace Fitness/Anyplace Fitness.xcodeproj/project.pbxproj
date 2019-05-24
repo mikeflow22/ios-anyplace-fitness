@@ -17,6 +17,7 @@
 		1BC141B22298319C00A30054 /* DetailWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141B12298319C00A30054 /* DetailWorkoutViewController.swift */; };
 		1BC141B422983DE200A30054 /* PunchPassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141B322983DE200A30054 /* PunchPassTableViewController.swift */; };
 		1BC141B622983DF800A30054 /* PunchPassCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141B522983DF800A30054 /* PunchPassCellTableViewCell.swift */; };
+		1BC141BA2298494400A30054 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC141B92298494400A30054 /* Client.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1BC141B12298319C00A30054 /* DetailWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorkoutViewController.swift; sourceTree = "<group>"; };
 		1BC141B322983DE200A30054 /* PunchPassTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchPassTableViewController.swift; sourceTree = "<group>"; };
 		1BC141B522983DF800A30054 /* PunchPassCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchPassCellTableViewCell.swift; sourceTree = "<group>"; };
+		1BC141B92298494400A30054 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,8 @@
 		1BC141932298242600A30054 /* Anyplace Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				1BC141B82298492D00A30054 /* Trainer Model */,
+				1BC141B72298491B00A30054 /* Client Model */,
 				1BC141942298242600A30054 /* AppDelegate.swift */,
 				1BC141AA229827E800A30054 /* StoryBoard */,
 				1BC141A9229827DA00A30054 /* View Controllers */,
@@ -117,6 +121,21 @@
 				1BC141AD22982B9C00A30054 /* WorkoutListTableViewCell.swift */,
 			);
 			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		1BC141B72298491B00A30054 /* Client Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BC141B92298494400A30054 /* Client.swift */,
+			);
+			path = "Client Model";
+			sourceTree = "<group>";
+		};
+		1BC141B82298492D00A30054 /* Trainer Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Trainer Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +215,7 @@
 				1BC141AC22982B4800A30054 /* WorkoutListTableViewController.swift in Sources */,
 				1BC141B422983DE200A30054 /* PunchPassTableViewController.swift in Sources */,
 				1BC141AE22982B9C00A30054 /* WorkoutListTableViewCell.swift in Sources */,
+				1BC141BA2298494400A30054 /* Client.swift in Sources */,
 				1BC141B22298319C00A30054 /* DetailWorkoutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
