@@ -54,8 +54,8 @@
 		1BC141932298242600A30054 /* Anyplace Fitness */ = {
 			isa = PBXGroup;
 			children = (
-				1BC141982298242600A30054 /* Main.storyboard */,
-				1BC141A6229827A500A30054 /* SignUpViewController.swift */,
+				1BC141AA229827E800A30054 /* StoryBoard */,
+				1BC141A9229827DA00A30054 /* View Controllers */,
 				1BC141942298242600A30054 /* AppDelegate.swift */,
 				1BC141A8229827B000A30054 /* Resources */,
 			);
@@ -70,6 +70,22 @@
 				1BC141A02298242700A30054 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1BC141A9229827DA00A30054 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1BC141A6229827A500A30054 /* SignUpViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1BC141AA229827E800A30054 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				1BC141982298242600A30054 /* Main.storyboard */,
+			);
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

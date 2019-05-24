@@ -10,13 +10,25 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    
+    //MARK: - IBOutlets
+    @IBOutlet weak var usernameTF: UITextField!
+    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var switchProperties: UISwitch!
+    @IBOutlet weak var segmentedProperties: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
+    //MARK: - IBActions
+    @IBAction func switchValuechanged(_ sender: UISwitch) {
+    }
+    
+    @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {
+    }
+    
     /*
     // MARK: - Navigation
 

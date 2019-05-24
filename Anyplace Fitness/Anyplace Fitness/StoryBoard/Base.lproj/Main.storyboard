@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="wT0-Oz-Uwv">
             <objects>
-                <viewController id="DJL-lR-jYY" sceneMemberID="viewController">
+                <viewController id="DJL-lR-jYY" customClass="SignUpViewController" customModule="Anyplace_Fitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WrV-eA-QpO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,12 +47,18 @@
                                     <segment title="Sign In"/>
                                     <segment title="Sign Up"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedValueChanged:" destination="DJL-lR-jYY" eventType="valueChanged" id="fOl-gu-0BX"/>
+                                </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gb4-kd-g7u">
                                 <rect key="frame" x="80" y="411" width="254" height="31"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ppp-9z-Vl6">
                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchValuechanged:" destination="DJL-lR-jYY" eventType="valueChanged" id="nWu-Bf-24n"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up as instructor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XM-mJ-qSV">
                                         <rect key="frame" x="57" y="0.0" width="197" height="31"/>
@@ -78,6 +84,13 @@
                         <viewLayoutGuide key="safeArea" id="CTy-o0-mKi"/>
                     </view>
                     <navigationItem key="navigationItem" id="8A0-9o-yea"/>
+                    <connections>
+                        <outlet property="emailTF" destination="c3s-0s-cWI" id="SxD-pz-nxX"/>
+                        <outlet property="passwordTF" destination="6tR-fd-Lbt" id="5YI-6B-vP7"/>
+                        <outlet property="segmentedProperties" destination="oit-D6-guz" id="id3-a6-2ZS"/>
+                        <outlet property="switchProperties" destination="Ppp-9z-Vl6" id="J2x-CW-15d"/>
+                        <outlet property="usernameTF" destination="8D5-e1-v7z" id="87j-nh-B3w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRH-TY-F8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
