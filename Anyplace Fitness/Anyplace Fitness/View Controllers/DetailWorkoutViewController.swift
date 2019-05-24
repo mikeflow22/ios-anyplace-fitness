@@ -7,6 +7,13 @@
 //
 
 import UIKit
+/*
+ CLIENT: Delete workout, Purchase Punch, Join workout
+ */
+
+/*
+ INSTRUCTOR: Delete class, OFFER Punch, Create class, Edit Class
+ */
 
 class DetailWorkoutViewController: UIViewController {
 

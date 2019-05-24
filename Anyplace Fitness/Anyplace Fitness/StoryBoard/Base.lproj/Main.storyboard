@@ -189,7 +189,7 @@
         <!--Title-->
         <scene sceneID="2Ti-h5-WK6">
             <objects>
-                <viewController id="PwZ-g8-S4y" sceneMemberID="viewController">
+                <viewController id="PwZ-g8-S4y" customClass="DetailWorkoutViewController" customModule="Anyplace_Fitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hRr-0z-f9n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
