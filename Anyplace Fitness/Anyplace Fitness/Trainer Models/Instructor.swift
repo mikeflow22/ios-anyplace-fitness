@@ -15,5 +15,5 @@ struct Instructor: Codable {
     let password: String
     let id: Int?
     let instructor: Bool
-    let workouts: [Workout]?
+    let workouts: [Workout]? = nil
 }
