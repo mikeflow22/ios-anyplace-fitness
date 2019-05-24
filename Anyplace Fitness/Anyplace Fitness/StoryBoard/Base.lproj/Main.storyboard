@@ -266,15 +266,30 @@
                                 <state key="normal" title="Punch Pass">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="punchPassButton:" destination="PwZ-g8-S4y" eventType="touchUpInside" id="V2e-aG-kGG"/>
+                                </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PzD-na-Dw5">
+                                <rect key="frame" x="105" y="821" width="204" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedValueChanged:" destination="PwZ-g8-S4y" eventType="valueChanged" id="e0c-2W-HDw"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HuR-Ys-cTF" firstAttribute="leading" secondItem="BbR-KV-Ct3" secondAttribute="leading" constant="8" id="0Tc-Ft-Ru1"/>
+                            <constraint firstItem="PzD-na-Dw5" firstAttribute="leading" secondItem="BbR-KV-Ct3" secondAttribute="leading" constant="105" id="3Hk-Hz-qlf"/>
                             <constraint firstItem="PEa-NL-cyi" firstAttribute="centerX" secondItem="hRr-0z-f9n" secondAttribute="centerX" id="58v-5W-jbT"/>
                             <constraint firstItem="FNS-ru-uSF" firstAttribute="top" secondItem="BbR-KV-Ct3" secondAttribute="top" id="DPy-Lo-ZSf"/>
                             <constraint firstItem="FNS-ru-uSF" firstAttribute="leading" secondItem="BbR-KV-Ct3" secondAttribute="leading" id="FE7-78-Iyt"/>
                             <constraint firstItem="BbR-KV-Ct3" firstAttribute="trailing" secondItem="HuR-Ys-cTF" secondAttribute="trailing" constant="8" id="HF8-ON-iZy"/>
+                            <constraint firstItem="BbR-KV-Ct3" firstAttribute="trailing" secondItem="PzD-na-Dw5" secondAttribute="trailing" constant="105" id="S6L-rm-bYV"/>
                             <constraint firstItem="1Za-6t-tly" firstAttribute="leading" secondItem="FNS-ru-uSF" secondAttribute="leading" constant="6" id="UVR-Aa-dk1"/>
                             <constraint firstItem="PEa-NL-cyi" firstAttribute="leading" secondItem="BbR-KV-Ct3" secondAttribute="leading" constant="60" id="UlI-Jv-Tgr"/>
                             <constraint firstItem="BbR-KV-Ct3" firstAttribute="trailing" secondItem="FNS-ru-uSF" secondAttribute="trailing" id="bwX-iW-dYV"/>
@@ -282,6 +297,7 @@
                             <constraint firstItem="PEa-NL-cyi" firstAttribute="top" secondItem="HuR-Ys-cTF" secondAttribute="bottom" constant="39.5" id="cRH-T4-2yD"/>
                             <constraint firstItem="HuR-Ys-cTF" firstAttribute="top" secondItem="FNS-ru-uSF" secondAttribute="bottom" constant="16" id="myu-eN-44h"/>
                             <constraint firstItem="1Za-6t-tly" firstAttribute="bottom" secondItem="FNS-ru-uSF" secondAttribute="bottom" constant="-6" id="rdL-Nu-D1H"/>
+                            <constraint firstItem="BbR-KV-Ct3" firstAttribute="bottom" secondItem="PzD-na-Dw5" secondAttribute="bottom" constant="13" id="uC1-es-szl"/>
                             <constraint firstItem="BbR-KV-Ct3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1Za-6t-tly" secondAttribute="trailing" symbolic="YES" id="vZ9-30-Dn6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BbR-KV-Ct3"/>
@@ -290,6 +306,12 @@
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="saJ-yh-rn8"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="imageView" destination="FNS-ru-uSF" id="PLo-sb-ceJ"/>
+                        <outlet property="punchPassProperties" destination="PEa-NL-cyi" id="CxN-fp-qGM"/>
+                        <outlet property="segmentedProperties" destination="PzD-na-Dw5" id="a8j-4n-Nfa"/>
+                        <outlet property="workoutLocationTF" destination="4MU-B7-WeT" id="Sx7-YQ-83B"/>
+                        <outlet property="workoutNameTF" destination="ybD-9B-6lh" id="IeM-gl-ZoW"/>
+                        <outlet property="workoutScheduleTF" destination="nq6-hp-BpC" id="BlC-Bb-v3Z"/>
                         <segue destination="mrp-Oz-zgh" kind="show" identifier="PunchPassSegue" id="oXW-Cm-hb8"/>
                     </connections>
                 </viewController>

@@ -112,6 +112,7 @@ class WorkoutListTableViewController: UITableViewController {
             destinationVC.isClientSide = isClientSide
             destinationVC.client = client
             destinationVC.instructor = instructor
+            destinationVC.wc = wc
         }
         
     }

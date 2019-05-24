@@ -18,32 +18,50 @@ import UIKit
 
 class DetailWorkoutViewController: UIViewController {
     
-    var wc: WorkoutController?
-    var workout: Workout?
-    
-    var isClientSide: Bool? {
+    var wc: WorkoutController? {
         didSet {
-            print("WorkoutListTableViewCell isClientSide isSet!")
+            print("DetailWorkoutViewController WC is set!")
         }
     }
-    var client: Client? {
+    var workout: Workout? {
         didSet {
-            print("WorkoutListTableViewCell client is set!")
-        }
-    }
-    var instructor: Instructor? {
-        didSet {
-            print("WorkoutListTableViewCell Instructor is set!")
+            print("DetailWorkoutViewController workout is set!")
         }
     }
     
+//    var isClientSide: Bool? {
+//        didSet {
+//            print("WorkoutListTableViewCell isClientSide isSet!")
+//        }
+//    }
+//    var client: Client? {
+//        didSet {
+//            print("WorkoutListTableViewCell client is set!")
+//        }
+//    }
+//    var instructor: Instructor? {
+//        didSet {
+//            print("WorkoutListTableViewCell Instructor is set!")
+//        }
+//    }
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var workoutNameTF: UITextField!
+    @IBOutlet weak var workoutLocationTF: UITextField!
+    @IBOutlet weak var workoutScheduleTF: UITextField!
+    @IBOutlet weak var punchPassProperties: UIButton!
+    @IBOutlet weak var segmentedProperties: UISegmentedControl!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-
+    @IBAction func punchPassButton(_ sender: UIButton) {
+    }
+    @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -53,5 +71,10 @@ class DetailWorkoutViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func updateViews(){
+        guard let passedInWorkout = workout, let wc = wc else { return }
+        
+    }
 
 }
