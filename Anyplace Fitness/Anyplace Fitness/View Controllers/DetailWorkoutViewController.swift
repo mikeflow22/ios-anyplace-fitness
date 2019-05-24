@@ -9,6 +9,7 @@
 import UIKit
 /*
  CLIENT: Delete workout, Purchase Punch, Join workout
+ For the client the text fields have to be inactive, user shouldnt be able to change anything
  */
 
 /*

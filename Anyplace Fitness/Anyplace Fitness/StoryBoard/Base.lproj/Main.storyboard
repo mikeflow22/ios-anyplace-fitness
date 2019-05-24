@@ -172,11 +172,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="zhU-r2-5e1">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Wa4-iw-4KP">
-                            <connections>
-                                <action selector="goToSettingsScene:" destination="cr7-U4-zBp" id="Kww-pA-6iS"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Settings" id="Wa4-iw-4KP">
+                                <connections>
+                                    <action selector="goToSettingsScene:" destination="cr7-U4-zBp" id="Kww-pA-6iS"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="add workout if you are a trainer" id="ADB-Yu-CMt">
+                                <connections>
+                                    <segue destination="PwZ-g8-S4y" kind="show" id="bdE-mO-fhq"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBarProperties" destination="suK-9P-GZn" id="HH6-Rf-DV8"/>
@@ -193,7 +200,29 @@
                     <view key="view" contentMode="scaleToFill" id="hRr-0z-f9n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FNS-ru-uSF">
+                                <rect key="frame" x="0.0" y="140" width="414" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="b0b-WA-HoQ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Za-6t-tly">
+                                <rect key="frame" x="6" y="232" width="41" height="30"/>
+                                <state key="normal" title="Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FNS-ru-uSF" firstAttribute="top" secondItem="BbR-KV-Ct3" secondAttribute="top" id="DPy-Lo-ZSf"/>
+                            <constraint firstItem="FNS-ru-uSF" firstAttribute="leading" secondItem="BbR-KV-Ct3" secondAttribute="leading" id="FE7-78-Iyt"/>
+                            <constraint firstItem="1Za-6t-tly" firstAttribute="leading" secondItem="FNS-ru-uSF" secondAttribute="leading" constant="6" id="UVR-Aa-dk1"/>
+                            <constraint firstItem="BbR-KV-Ct3" firstAttribute="trailing" secondItem="FNS-ru-uSF" secondAttribute="trailing" id="bwX-iW-dYV"/>
+                            <constraint firstItem="1Za-6t-tly" firstAttribute="bottom" secondItem="FNS-ru-uSF" secondAttribute="bottom" constant="-6" id="rdL-Nu-D1H"/>
+                            <constraint firstItem="BbR-KV-Ct3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1Za-6t-tly" secondAttribute="trailing" symbolic="YES" id="vZ9-30-Dn6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BbR-KV-Ct3"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Hz6-Q0-BnG">
@@ -202,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IvC-yD-rTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3053" y="124"/>
+            <point key="canvasLocation" x="3052.1739130434785" y="123.88392857142857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sBE-kj-Mvm">
@@ -223,4 +252,7 @@
             <point key="canvasLocation" x="628.98550724637687" y="123.88392857142857"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7Bn-kb-e4T"/>
+    </inferredMetricsTieBreakers>
 </document>
