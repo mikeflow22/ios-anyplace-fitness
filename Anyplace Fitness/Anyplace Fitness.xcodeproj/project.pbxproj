@@ -143,8 +143,16 @@
 				1BC141BB22984B1800A30054 /* Instructor.swift */,
 				1BC141BD22984B9100A30054 /* Workout.swift */,
 				1BC141C022984D6500A30054 /* PunchPass.swift */,
+				1BC141C222984DB900A30054 /* Model Controllers */,
 			);
 			path = "Trainer Models";
+			sourceTree = "<group>";
+		};
+		1BC141C222984DB900A30054 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
