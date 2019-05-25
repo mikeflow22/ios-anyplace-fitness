@@ -10,6 +10,9 @@ import UIKit
 
 //DELETE CLASSES 
 class WorkoutListTableViewController: UITableViewController {
+    
+    //MOCK INSTRUCTORS DATA
+    var workouts = [Workout]()
 
     let wc = WorkoutController()
     
@@ -38,7 +41,11 @@ class WorkoutListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadMockData()
     }
 
     //MARK: - IBActions
@@ -49,28 +56,34 @@ class WorkoutListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if let client = client {
-            return client.workouts?.count ?? 0
-        }
+//        if let client = client {
+//            return client.workouts?.count ?? 0
+//        }
+//
+//        if let instructor = instructor {
+//            return instructor.workouts?.count ?? 0
+//        }
+//        return 2
         
-        if let instructor = instructor {
-            return instructor.workouts?.count ?? 0
-        }
-        return 2
+        //MOCK DATA
+        return workouts.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WorkoutCell", for: indexPath) as! WorkoutListTableViewCell
 
         // Configure the cell...
-        if let client = client {
-            let workout = client.workouts?[indexPath.row]
-            cell.workout = workout
-        } else if let instructor = instructor {
-            let workout = instructor.workouts?[indexPath.row]
-            cell.workout = workout
-        }
+//        if let client = client {
+//            let workout = client.workouts?[indexPath.row]
+//            cell.workout = workout
+//        } else if let instructor = instructor {
+//            let workout = instructor.workouts?[indexPath.row]
+//            cell.workout = workout
+//        }
         
+        //MOCK DATA
+        let workout = workouts[indexPath.row]
+        cell.workout = workout
         return cell
     }
 
@@ -91,6 +104,20 @@ class WorkoutListTableViewController: UITableViewController {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+    
+    func loadMockData(){
+        guard let instructor = instructor else { return }
+        workouts += [
+        Workout(name: "Yoga", schedule: "9am Monday", location: "123 Relax st.", instructorName: instructor.username),
+        Workout(name: "Pilates", schedule: "4pm Monday", location: "123 Core st", instructorName: instructor.username),
+        Workout(name: "Barre", schedule: "10am Tuesday", location: "345 Dance ln", instructorName: instructor.username),
+        Workout(name: "Crossfit", schedule: "5am Wednesday", location: "456 Heartrate ln", instructorName: instructor.username),
+        Workout(name: "Kickboxing", schedule: "6pm Wednesday", location: "456 Punch pkwy", instructorName: instructor.username),
+        Workout(name: "KettleBell", schedule: "4pm Thursday", location: "567 Kettlbell rd", instructorName: instructor.username),
+        Workout(name: "Trampoline", schedule: "10am Friday", location: "789 Jump st", instructorName: instructor.username),
+        Workout(name: "Step", schedule: "5pm Friday", location: "789 Stepping ln", instructorName: instructor.username)
+        ]
     }
 
    

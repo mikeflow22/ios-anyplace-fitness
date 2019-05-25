@@ -68,30 +68,29 @@ class SignUpViewController: UIViewController {
         print("button value changed")
         guard let username = usernameTF.text, !username.isEmpty, let email = emailTF.text, !email.isEmpty, let password = passwordTF.text, !password.isEmpty else  { return }
         
-//        let client = cc.createClient(username: username, password: password)
-//        let instructor = ic.createInstructor(username: username, password: password, id: nil, instructor: switchProperties.isOn)
-        
         //if sign up create either a client or instructor based on the switch value.
         if sender.selectedSegmentIndex == 1 && !switchProperties.isOn {
             //client is signing UP
             print("client is signing up.")
-            self.client = cc.createClient(username: username, password: password)
-            //segue and change side
-            isClientSide = true
             
-            performSegue(withIdentifier: "SignUpSegue", sender: self)
-            
+            if cc.clientSignIn(username: username, password: password){
+                //if the credentials are already in the array, then client has previously signed up and should not be able to sign in again. create an alert
+                alert(message: "YOU HAVE ALREADY SIGNED UP, PLEASE SIGN IN.")
+            } else {
+                //first time this user is signing up, so create client to append the array
+                self.client = cc.createClient(username: username, password: password)
+                //segue
+                performSegue(withIdentifier: "SignUpSegue", sender: self)
+            }
         } else if sender.selectedSegmentIndex == 1 && switchProperties.isOn {
             //instructor signing up
             print("INSTRUCTOR IS SIGNING UP")
             
             //check to see if instructor is already in the array, if so then they've already signed up so they cannot do it twice, show an alert
             if ic.instructorSignIn(instructor: Instructor(username: username, password: password, instructor: switchProperties.isOn)){
-                alert(message: "YOU HAVE ALREADY SIGNED UP, PLEASE SIGN IN.")
             } else {
                 self.instructor = ic.createInstructor(username: username, password: password, id: nil, instructor: switchProperties.isOn)
-                //segue and update side
-                isClientSide = false
+                //segue
                 performSegue(withIdentifier: "SignUpSegue", sender: self)
             }
         } else if sender.selectedSegmentIndex == 0 && !switchProperties.isOn {
@@ -100,28 +99,26 @@ class SignUpViewController: UIViewController {
            
             if cc.clientSignIn(username: username, password: password){
                 
-                //so we know its in the array so we can create the client here
+                //so we know its in the array so we can set the client here with the credentials
                 self.client = Client(username: username, password: password)
                 print("CLIENT SIGN BACK IN SUCCESS!!!!!!!!!!!!!!!!!!!!!!")
-//                self.client = cc.clients.map { $0 }.contains(self.client)
-                //if this is true then segue and change side
-                isClientSide = true
+                //segue
                 performSegue(withIdentifier: "SignUpSegue", sender: self)
             } else  {
-                //ALERT MESSAGE SAYING SIGN UP
+                //ALERT MESSAGE SAYING SIGN UP IF NO IN ARRAY THEN THEY SHOULDNT BE TRYING TO SIGN IN BUT RATHER SIGNING UP
                 alert(message: "You are not in our database, please sign UP.")
             }
         } else if sender.selectedSegmentIndex == 0 && switchProperties.isOn {
             //instructor signing back in
             print("INSTRUCTOR SIGNING BACK IN")
+            //If credentials are in the array, then they've already signed up, so they are allowed to sign back in.
             if ic.instructorSignIn(instructor: Instructor(username: username, password: password, instructor: switchProperties.isOn)){
                 //if this is true then segue and update side
                 print("INSTRUCTOR SIGN IN SUCCESS")
                 self.instructor = Instructor(username: username, password: password, instructor: switchProperties.isOn)
-                isClientSide = false
                 performSegue(withIdentifier: "SignUpSegue", sender: self)
             } else {
-                //ALERT MESSAGE SAYING SIGN UP
+                //ALERT MESSAGE SAYING SIGN UP. After we checked the array and didn't find the credentials in it, we are goig to tell them to sign UP
                 alert(message: "You are not in our database, please sign UP.")
             }
         }
