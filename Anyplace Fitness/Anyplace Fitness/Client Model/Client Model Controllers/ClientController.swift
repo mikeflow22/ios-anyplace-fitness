@@ -33,7 +33,8 @@ class ClientController {
         return newClient
     }
     
-    func clientSignIn(client: Client) -> Bool {
+    func clientSignIn(username: String, password: String) -> Bool {
+        let client = Client(username: username, password: password)
         if clients.contains(client) {
             return true
         }

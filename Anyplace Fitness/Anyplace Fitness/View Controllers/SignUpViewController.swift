@@ -36,15 +36,28 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("client array: \(cc.clients.map { $0.username})")
+        print("instructors array: \(ic.instructors.map { $0.username})")
+        
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+//        cc.clients.removeAll()
+////        ic.instructors.removeAll()
+//        print("client array: \(cc.clients.map { $0.username})")
+//        print("instructors array: \(ic.instructors.map { $0.username})")
+        
         if segmentedProperties.selectedSegmentIndex == 0 {
             segmentedProperties.selectedSegmentIndex = 1
         } else {
             segmentedProperties.selectedSegmentIndex = 0
         }
+        print(segmentedProperties.selectedSegmentIndex)
+        
+        
     }
     
     //MARK: - IBActions
@@ -61,6 +74,7 @@ class SignUpViewController: UIViewController {
         //if sign up create either a client or instructor based on the switch value.
         if sender.selectedSegmentIndex == 1 && !switchProperties.isOn {
             //client is signing UP
+            print("client is signing up.")
             self.client = cc.createClient(username: username, password: password)
             //segue and change side
             isClientSide = true
@@ -69,15 +83,27 @@ class SignUpViewController: UIViewController {
             
         } else if sender.selectedSegmentIndex == 1 && switchProperties.isOn {
             //instructor signing up
-            self.instructor = ic.createInstructor(username: username, password: password, id: nil, instructor: switchProperties.isOn)
-            //segue and update side
-            isClientSide = false
-            performSegue(withIdentifier: "SignUpSegue", sender: self)
+            print("INSTRUCTOR IS SIGNING UP")
             
+            //check to see if instructor is already in the array, if so then they've already signed up so they cannot do it twice, show an alert
+            if ic.instructorSignIn(instructor: Instructor(username: username, password: password, instructor: switchProperties.isOn)){
+                alert(message: "YOU HAVE ALREADY SIGNED UP, PLEASE SIGN IN.")
+            } else {
+                self.instructor = ic.createInstructor(username: username, password: password, id: nil, instructor: switchProperties.isOn)
+                //segue and update side
+                isClientSide = false
+                performSegue(withIdentifier: "SignUpSegue", sender: self)
+            }
         } else if sender.selectedSegmentIndex == 0 && !switchProperties.isOn {
             //client signing back in
-            guard let signInClient = client else { return }
-            if cc.clientSignIn(client: signInClient){
+            print("CLIENT SIGNING BACK IN")
+           
+            if cc.clientSignIn(username: username, password: password){
+                
+                //so we know its in the array so we can create the client here
+                self.client = Client(username: username, password: password)
+                print("CLIENT SIGN BACK IN SUCCESS!!!!!!!!!!!!!!!!!!!!!!")
+//                self.client = cc.clients.map { $0 }.contains(self.client)
                 //if this is true then segue and change side
                 isClientSide = true
                 performSegue(withIdentifier: "SignUpSegue", sender: self)
@@ -87,9 +113,11 @@ class SignUpViewController: UIViewController {
             }
         } else if sender.selectedSegmentIndex == 0 && switchProperties.isOn {
             //instructor signing back in
-            guard let signInInstructor = instructor else { return }
-            if ic.instructorSignIn(instructor: signInInstructor){
+            print("INSTRUCTOR SIGNING BACK IN")
+            if ic.instructorSignIn(instructor: Instructor(username: username, password: password, instructor: switchProperties.isOn)){
                 //if this is true then segue and update side
+                print("INSTRUCTOR SIGN IN SUCCESS")
+                self.instructor = Instructor(username: username, password: password, instructor: switchProperties.isOn)
                 isClientSide = false
                 performSegue(withIdentifier: "SignUpSegue", sender: self)
             } else {
@@ -113,8 +141,13 @@ class SignUpViewController: UIViewController {
             //pass over the value of isClientSide
             guard let destinationVC = segue.destination as? WorkoutListTableViewController else { return }
             destinationVC.isClientSide = isClientSide
-            destinationVC.client = client
-            destinationVC.instructor = instructor
+            
+            if let clientToPass = client {
+                destinationVC.client = clientToPass
+            }
+            if let instructorToPass = instructor {
+                destinationVC.instructor = instructorToPass
+            }
         }
     }
 }

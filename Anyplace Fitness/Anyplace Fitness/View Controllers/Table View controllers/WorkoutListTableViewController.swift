@@ -21,11 +21,13 @@ class WorkoutListTableViewController: UITableViewController {
     var client: Client? {
         didSet {
             print("WorkoutListTableViewController client is set!")
+            tableView.backgroundColor = .magenta
         }
     }
     var instructor: Instructor? {
         didSet {
             print("WorkoutListTableViewController Instructor is set!")
+            tableView.backgroundColor = .green
         }
     }
     
