@@ -41,11 +41,12 @@ class WorkoutListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadMockData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadMockData()
+//        loadMockData()
     }
 
     //MARK: - IBActions
@@ -83,28 +84,30 @@ class WorkoutListTableViewController: UITableViewController {
         
         //MOCK DATA
         let workout = workouts[indexPath.row]
+//        cell.dayLabel.text = workout.schedule
+//        cell.workoutNameLabel.text = workout.name
         cell.workout = workout
         return cell
     }
 
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            
-            if let client = client {
-                guard let workoutToDelete = client.workouts?[indexPath.row] else { return }
-                wc.delete(workout: workoutToDelete)
-            } else if let instructor = instructor {
-                guard let workoutToDelete = instructor.workouts?[indexPath.row] else { return }
-                wc.delete(workout: workoutToDelete)
-            }
-            
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//
+//            if let client = client {
+//                guard let workoutToDelete = client.workouts?[indexPath.row] else { return }
+//                wc.delete(workout: workoutToDelete)
+//            } else if let instructor = instructor {
+//                guard let workoutToDelete = instructor.workouts?[indexPath.row] else { return }
+//                wc.delete(workout: workoutToDelete)
+//            }
+//
+//            // Delete the row from the data source
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        } else if editingStyle == .insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        }
+//    }
     
     func loadMockData(){
         guard let instructor = instructor else { return }
@@ -118,6 +121,7 @@ class WorkoutListTableViewController: UITableViewController {
         Workout(name: "Trampoline", schedule: "10am Friday", location: "789 Jump st", instructorName: instructor.username),
         Workout(name: "Step", schedule: "5pm Friday", location: "789 Stepping ln", instructorName: instructor.username)
         ]
+//        tableView.reloadData()
     }
 
    
@@ -125,23 +129,29 @@ class WorkoutListTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SignUpSegue" {
+        if segue.identifier == "CellSegue" {
             //pass over the value of isClientSide
             guard let destinationVC = segue.destination as? DetailWorkoutViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
-            var workoutToPass:Workout?
-            
-            if let client = client {
-                let workout = client.workouts?[indexPath.row]
-                workoutToPass = workout
-            } else if let instructor = instructor {
-                let workout = instructor.workouts?[indexPath.row]
-                workoutToPass = workout
-            }
-            destinationVC.workout = workoutToPass
+//            var workoutToPass:Workout?
+//
+//            if let client = client {
+//                let workout = client.workouts?[indexPath.row]
+//                workoutToPass = workout
+//            } else if let instructor = instructor {
+//                let workout = instructor.workouts?[indexPath.row]
+//                workoutToPass = workout
+//            }
+//
+//            destinationVC.workout = workoutToPass
 //            destinationVC.isClientSide = isClientSide
 //            destinationVC.client = client
 //            destinationVC.instructor = instructor
             destinationVC.wc = wc
+            
+            //MOCK DATA
+            let mockWorkout = workouts[indexPath.row]
+            print("this is the mock workout that should be sent to detail view: \(mockWorkout.name)")
+           destinationVC.workout = mockWorkout
         }
         
     }
